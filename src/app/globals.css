@@ -2,32 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  /* ── Variant 1: original clone (colors sampled from the reference screenshots) ── */
+  :root,
+  [data-theme="original"] {
+    --c-cream: #f5f1e8;
+    --c-sand: #e8e0ce;
+    --c-taupe: #dcd2bd;
+    --c-ink: #3f423c;
+    --c-accent: #7fa9a2; /* sage teal */
+    --c-deep: #527f78;   /* footer bar */
+    --c-line: #ddd6c6;
+    --font-serif: var(--font-serif-original);
+    --font-sans: var(--font-sans-original);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  /* ── Variant 2: Dr. Maya Reynolds redesign (warm neutrals + clay accent) ── */
+  [data-theme="maya"] {
+    --c-cream: #fbf7f0;
+    --c-sand: #f2e9dc;
+    --c-taupe: #e6d7c3;
+    --c-ink: #38322a;
+    --c-accent: #a9714e; /* warm clay */
+    --c-deep: #7e4f35;
+    --c-line: #e7ded0;
+    --font-serif: var(--font-serif-maya);
+    --font-sans: var(--font-sans-maya);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+    overflow-x: hidden;
+  }
+
+  /* anchored sections stop below the sticky header */
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
