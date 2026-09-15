@@ -1,40 +1,117 @@
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Grow My Therapy
+
+A responsive therapy-practice website built with Next.js and Tailwind CSS. The project presents a counseling practice through a welcoming homepage, service information, an about section, office imagery, and frequently asked questions.
+
+> **Project note:** This website was created as an internship assignment. Dr. Maya Reynolds is a fictional profile used for the project; the website should not be treated as a real therapy practice or as a source of clinical advice.
+
+## Features
+
+- Responsive layout for desktop, tablet, and mobile screens
+- Homepage with a hero section and clear calls to action
+- Counseling services and practice approach sections
+- About/profile section
+- Office image gallery
+- FAQ page with expandable questions
+- Shared header, footer, and reusable page sections
+- Centralized content configuration for easier updates
+- Image assets stored locally in the `public` directory
+
+## Tech Stack
+
+- **Next.js 14** — React framework
+- **React** — UI components
+- **TypeScript** — typed application code
+- **Tailwind CSS** — styling and responsive design
+- **PostCSS** — CSS processing
+
+## Project Structure
+
+```text
+grow-my-therapy/
+├── public/
+│   └── images/
+│       └── maya/
+├── src/
+│   ├── app/
+│   │   ├── faqs/
+│   │   │   └── page.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   └── content/
+│       ├── index.ts
+│       ├── maya.ts
+│       ├── original.ts
+│       └── types.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── tailwind.config.ts
+└── tsconfig.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Install **Node.js** and **npm** before running the project.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Rksingh9546/grow-my-therapy.git
+cd grow-my-therapy
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Command | Description |
+|---|---|
+| `npm run dev` | Starts the local development server |
+| `npm run build` | Creates a production build |
+| `npm run start` | Runs the production server |
+| `npm run lint` | Runs linting, if configured in the project |
 
-## Learn More
+## Updating Website Content
 
-To learn more about Next.js, take a look at the following resources:
+Website content is organized in the `src/content/` directory. Update the relevant configuration and content types there to change profile details, sections, services, or other page information.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Images used by the website are stored in `public/images/`. Keep image paths consistent with the references in the components and content configuration.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Before publishing, verify that all profile information, contact details, office information, and booking links are accurate and authorized for use. Do not publish placeholder information as real practice details.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project can be deployed to a Next.js-compatible hosting platform, such as Vercel.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-=======
-# grow-my-therapy
+Before deployment:
 
+1. Install dependencies with `npm install`.
+2. Confirm the site builds successfully with `npm run build`.
+3. Check the homepage and FAQ page on mobile and desktop.
+4. Verify all images and navigation links.
+5. Replace or remove any assignment-only placeholder content.
+
+## Assignment Context
+
+This project was developed as a website design and implementation assignment. It demonstrates responsive page composition, reusable React components, centralized content, and a consistent visual presentation.
+
+## License
+
+No license has been specified for this project. Contact the repository owner before reusing or redistributing its code or assets.
