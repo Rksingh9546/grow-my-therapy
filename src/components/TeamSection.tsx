@@ -18,13 +18,15 @@ export default function TeamSection({
   const member = members[0];
 
   // Group the bio into sections of two paragraphs each.
-  const bioSections = Array.from(
-    { length: Math.ceil(bio.length / 2) },
-    (_, index) => ({
-      title: sectionTitles[index] ?? "More About Our Approach",
-      paragraphs: bio.slice(index * 2, index * 2 + 2),
-    })
-  );
+  const bioSections = bio
+  ? Array.from(
+      { length: Math.ceil(bio.length / 2) },
+      (_, index) => ({
+        title: sectionTitles[index] ?? "More About Our Approach",
+        paragraphs: bio.slice(index * 2, index * 2 + 2),
+      })
+    )
+  : [];
 
   return (
     <section id={id} className="bg-cream">
